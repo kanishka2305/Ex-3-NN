@@ -36,6 +36,7 @@ Step 3: Repeat the  iteration  until the losses become constant and  minimum<BR>
 Step 4 : Test for the XOR patterns.
 
 <H3>Program:</H3>
+
 ```py
 
 import numpy as np
@@ -56,6 +57,7 @@ np.random.seed(2)
 w1 = np.random.rand(n_h,n_x)  
 w2 = np.random.rand(n_y,n_h)   
 losses = []
+
 ```
 
 ```py
