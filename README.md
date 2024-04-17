@@ -37,11 +37,13 @@ Step 4 : Test for the XOR patterns.
 
 <H3>Program:</H3>
 ```py
+
 import numpy as np
 import pandas as pd
 import io
 import matplotlib.pyplot as plt
 ```
+
 ```py
 x=np.array([[0,0,1,1],[0,1,0,1]])
 y=np.array([[0,1,1,0]])
@@ -55,11 +57,13 @@ w1 = np.random.rand(n_h,n_x)
 w2 = np.random.rand(n_y,n_h)   
 losses = []
 ```
+
 ```py
 def sigmoid(z):
     z= 1/(1+np.exp(-z))
     return z
 ```
+
 ```py
 def forward_prop(w1,w2,x):
     z1 = np.dot(w1,x)
@@ -68,6 +72,7 @@ def forward_prop(w1,w2,x):
     a2 = sigmoid(z2)
     return z1,a1,z2,a2
 ```
+
 ```py
 def back_prop(m,w1,w2,z1,a1,z2,a2,y):
   dz2 = a2-y
@@ -78,6 +83,7 @@ def back_prop(m,w1,w2,z1,a1,z2,a2,y):
   dw2 = np.reshape(dw2,w2.shape)
   return dz2,dw2,dz1,dw1
 ```
+
 ```py
 iterations = 10000
 for i in range(iterations):
@@ -92,6 +98,7 @@ plt.plot(losses)
 plt.xlabel("EPOCHS")
 plt.ylabel("Loss value")
 ```
+
 ```py
 def predict(w1,w2,input):
     z1,a1,z2,a2 = forward_prop(w1,w2,test)
@@ -101,6 +108,7 @@ def predict(w1,w2,input):
     else:
         print( [i[0] for i in input], 0)
 ```
+
 ```py
 print('Input',' Output')
 test=np.array([[1],[0]])
